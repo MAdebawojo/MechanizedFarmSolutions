@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carbon Emissions Calculator</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Emissions Calculator</h1>
+        <div class="form-group">
+            <label for="machinery-type">Machinery Type:</label>
+            <select id="machinery-type">
+                <option value="Harvestor">Harvestor</option>
+                <option value="Sprayer">Sprayer</option>
+                <option value="Harrow">Harrow</option>
+                <option value="Combine Harvester">Combine Harvester</option>
+                <option value="Rake">Rake</option>
+                <option v
+                alue="Roller">Roller</option>
+                <option value="Cultivator">Cultivator</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="work-amount">Work Amount:</label>
+            <input type="number" id="work-amount" min="0" step="1">
+        </div>
+        <button onclick="calculateEmissions()">Calculate</button>
+        <div class="result" id="emissions"></div>
+    </div>
+
+    <script>
+        var emissionFactors = {
+            "Harvestor": 0.1,
+            "Sprayer": 0.05,
+            "Harrow": 0.08,
+            "Combine Harvester": 0.12,
+            "Rake": 0.07,
+            "Roller": 0.09,
+            "Cultivator": 0.06
+        };
+
+        function getEmissionsFactor(machineryType) {
+            if (machineryType in emissionFactors) {
+                return emissionFactors[machineryType];
+            } else {
+                return 0.05; // Default emissions factor for unknown machinery (adjust as needed)
+            }
+        }
+
+        function calculateEmissions() {
+            var machineryType = document.getElementById("machinery-type").value;
+            var workAmount = document.getElementById("work-amount").value;
+            var emissionsFactor = getEmissionsFactor(machineryType);
+            var emissions = emissionsFactor * workAmount;
+            document.getElementById("emissions").textContent = "Emissions: " + emissions.toFixed(2) + " units";
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Select Example</title>
+</head>
+<body>
+    <label for="mySelect">Choose an Option:</label>
+    <select id="mySelect">
+        <option value="option1">Harrow</option>
+        <option value="option2">Sprayer</option>
+        <option value="option3">Combine Harvester</option>
+        <option value="option4">Rake</option>
+        <option value="option3">Roller</option>
+        <option value="option4">Cultivator</option>
+    </select>
+</body>
+</html> -->

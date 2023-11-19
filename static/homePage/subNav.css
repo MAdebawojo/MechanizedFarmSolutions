@@ -1,0 +1,65 @@
+.sub-nav
+{
+    /* color: var(--gray-600, #5F6C72); */
+    text-align: center;
+    /* background-color: red; */
+    padding: 1em;
+}
+
+.sub-nav-item 
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.sub-nav-img 
+{
+    margin-right: 10px; /* Adjust the spacing between the image and text */
+}
+
+.sub-nav-text 
+{
+    color: var(--gray-600, #5F6C72);
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+.sub-nav-ul
+{
+    display: flex;
+    justify-content: center;
+    list-style-type: none; /* Remove the default list styling */
+    padding: 0; /* Remove padding */
+}
+.nav-item.dropdown
+{
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 10px;
+    background-color: rgb(212, 208, 208);
+}
+
+/* Underline Dropdown and drop down items on hover */
+.nav-item.dropdown .nav-link,
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+    color: black;
+    font-weight: 400;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.875rem;
+    font-style: normal;
+    background-color: transparent;
+    
+}
+    /* Add underline on hover for the dropdown text */
+.nav-item.dropdown .nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Add underline on hover for the texts in the dropdown */
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    text-decoration: underline;
+}            

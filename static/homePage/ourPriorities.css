@@ -1,0 +1,71 @@
+.our-priorities h2
+        {
+            color: #000;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 2.9rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: capitalize;
+            margin-top: 150px;
+            margin-bottom: 80px;
+        }
+      
+
+       .core-values-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            /* background-color: green; */
+            background-image: url('../images/bgMachineCat.png'); 
+        
+        }
+
+        .core-value-card {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            background-color: #FFF;
+
+        }
+
+        .core-value-card:hover {
+            transform: scale(1.05);
+        }
+
+        .icon-section {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .title-section {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .content-section {
+            padding: 0 20px 20px 20px;
+        }
+
+        /* Media Query for Medium Screens */
+        @media (max-width: 1000px) {
+            .core-values-container {
+                flex-wrap: wrap;
+            }
+            .core-value-card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        /* Media Query for Small Screens */
+        @media (max-width: 600px) {
+            .core-value-card {
+                width: calc(100% - 40px);
+            }
+        }

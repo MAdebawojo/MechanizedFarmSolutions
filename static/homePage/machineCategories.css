@@ -1,0 +1,80 @@
+        /* Style for the Machine Categories Section  */
+        
+        .machine-categories-wrapper
+        {
+            margin-top: 150px;
+            background: url('../images/bgMachineCat.png');
+            background-size: cover;        
+        }
+        .machine-cat-texts
+        {
+            color: #000;
+            text-align: center;
+            font-family: Roboto;
+            text-transform: capitalize;
+            line-height: normal;
+        }
+        .machine-cat-texts p
+        {
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 400;
+        }
+        .machine-cat-texts h1
+        {
+            margin-bottom: 80px;
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 700;
+        }
+        .machine-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Style for individual machine category containers */
+        .machine-category {
+            flex: 0 0 31%; /* Maximum 3 machine categories per row */
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease; /* Smooth transition effect on hover */
+        }
+
+        /* Style for machine category images */
+        .machine-category img {
+            border: 1px solid #ddd; /* Add a border for better visibility */
+            border-radius: 8px; /* Optional: Add some border-radius for a rounded look */
+        }
+
+        /* Style for machine category titles */
+        .machine-category p {
+            margin: 5px 0;
+            color: #000;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            /* text-transform: capitalize; */
+        }
+
+        /* Transform effect on hover */
+        .machine-category:hover {
+            transform: scale(1.05); /* Slight scale-up on hover */
+        }
+
+        /* Adjust layout for medium screens */
+        @media screen and (max-width: 768px) {
+            .machine-category {
+                flex: 0 0 48%; /* 2 machine categories per row */
+            }
+        }
+
+        /* Adjust layout for small screens */
+        @media screen and (max-width: 480px) {
+            .machine-category {
+                flex: 0 0 100%; /* 1 machine category per row */
+            }
+        }

@@ -1,0 +1,70 @@
+.custom-nav
+{
+    background: rgba(1, 52, 14, 0.80);
+    font-weight: bolder;
+    text-transform: uppercase;
+   
+}
+.custom-nav a
+{
+    color: #FFF;
+}
+.custom-nav-border 
+{
+    background-color: #F26E21;
+    border: 1px solid #F26E21;
+    border-radius: 5px;
+    padding:  5px 10px;
+    color: #FFF;
+    margin-right: 1em;
+}
+.custom-logo
+{
+    color: #FFF;
+    text-align: center;
+    font-family: Racing Sans One;
+    font-size: 3.125rem;
+    font-weight: bolder;
+}
+.custom-nav-items
+{
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Position "Login" and "Sign Up" to the right */
+.custom-login-signup {
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: red; */
+}
+
+/* Remove the border for small screens */
+@media (max-width: 1075px) 
+{
+    .custom-nav-border
+    {
+        border: none;
+        margin: 1em auto;
+    }
+}
+@media (min-width: 759px) and (max-width: 1200px) 
+{
+    .custom-nav-items
+    {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+    .custom-nav-border 
+    {
+        background-color: #F26E21;
+        border: 1px solid #F26E21;
+        border-radius: 5px;
+        padding:  5px 10px;
+        color: #FFF;
+        font-size: 0.8rem;
+
+        margin-right: 1em;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../static/userRegistrationPage.css"> 
+</head>
+<body>
+    <h1><a href="#">Go Home</a></h1>
+    <div id="flash-messages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flash">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+    </div>
+    <div class="wrapper">
+        <main>
+            <div class="login-container">
+                <h2>Sign Up</h2>
+                <p>Create An your account</p>
+
+                <!--Registration Form-->
+                <form id="loginForm"  action={{ url_for('register') }} method="post">
+                    <div class="input-container">
+                        <div class="input-inner">
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                            <label for="email">First Name</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-inner">
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            <label for="email">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-inner">
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Mobile Number" required>
+                            <label for="email">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-inner">
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <label for="email">Email address</label>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="input-inner">
+                            <input type="password" id="password" name="password" placeholder="Enter a password" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                   
+                    <div class="input-container">
+                        <div class="input-inner">
+                            <input type="password" id="repeatPassword" name="password" placeholder="Re-enter Password" required>
+                            <label for="password">Repeat Password</label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="formCheck" name="password" placeholder="Re-enter Password" required>
+                        <label for="formCheck" aria-required="true">
+                            I agree all statements in <a href="#!">Terms of service</a>
+                          </label>
+                    </div>
+
+                    <button type="submit">Register</button>
+    
+                    <div id="forgotPasswordContainer">
+
+                        <!-- <a href="#">Forgotten Password?</a> -->
+                    </div>
+                </form>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+            </div>
+        </main>
+    </div>
+    
+</body>
+</html>

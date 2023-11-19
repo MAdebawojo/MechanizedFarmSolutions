@@ -1,0 +1,206 @@
+/* body
+{
+    background-image: url('../images/bgMachineCat.png'); 
+    background-size: cover;  
+} */
+
+@media (min-width: 200px) and (max-width: 480px) {
+    .jumbotron
+    {
+        background-image: url('../images/HomepageImage.png'); 
+        /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+        background-size: cover; /* Optional: This will make the image cover the entire element */
+        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
+        height: 30vh;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Center text vertically */
+        gap: 4em;
+        background-color: Black;
+    }
+    .jumbotron-main-text
+    {
+        font-feature-settings: 'cpsp' on;
+        font-family: Roboto;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        font-variant: all-small-caps;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron-sub-text
+    {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+}
+@media (min-width: 481px) and (max-width: 758px) {
+    .jumbotron
+    {
+        background-image: url('../images/HomepageImage.png'); 
+        /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+        background-size: cover; /* Optional: This will make the image cover the entire element */
+        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
+        height: 35vh;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Center text vertically */
+        gap: 6em;
+        background-color: Black;
+    }
+    .jumbotron-main-text
+    {
+        font-feature-settings: 'cpsp' on;
+        font-family: Roboto;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        font-variant: all-small-caps;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron-sub-text
+    {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+}
+@media (min-width: 759px) and (max-width: 1024px) {
+    .jumbotron
+    {
+        background-image: url('../images/HomepageImage.png'); 
+        /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+        background-size: cover; /* Optional: This will make the image cover the entire element */
+        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
+        height: 60vh;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Center text vertically */
+        gap: 6em;
+        background-color: Black;
+    }
+    .jumbotron-main-text
+    {
+        font-feature-settings: 'cpsp' on;
+        font-family: Roboto;
+        font-size: 2.2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        font-variant: all-small-caps;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron-sub-text
+    {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .jumbotron
+    {
+        background-image: url('../images/HomepageImage.png'); 
+        /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+        background-size: cover; /* Optional: This will make the image cover the entire element */
+        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
+        height: 75vh;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Center text vertically */
+        gap: 6em;
+        background-color: Black;
+    }
+    .jumbotron-main-text
+    {
+        font-feature-settings: 'cpsp' on;
+        font-family: Roboto;
+        font-size: 2.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        font-variant: all-small-caps;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron-sub-text
+    {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+}
+@media (min-width: 1201px){
+    .jumbotron
+    {
+        background-image: url('../images/HomepageImage.png'); 
+        /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
+        background-size: cover; /* Optional: This will make the image cover the entire element */
+        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
+        height: 81vh;
+        color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Center text vertically */
+        gap: 6em;
+        background-color: Black;
+    }
+    .jumbotron-main-text
+    {
+        font-feature-settings: 'cpsp' on;
+        font-family: Roboto;
+        font-size: 2.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        font-variant: all-small-caps;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .jumbotron-sub-text
+    {
+        text-align: center;
+        font-family: Roboto;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+}
