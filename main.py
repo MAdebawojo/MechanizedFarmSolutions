@@ -39,8 +39,9 @@ mail = Mail(app)
 serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 @app.route('/')
+@app.route('/home')
 def home():
-    return "<h1>Home Page</h1>"
+    return render_template("homePage.html")
 
 @app.route('/verify_email/<token>', methods=['GET'])
 def verify_email(token):

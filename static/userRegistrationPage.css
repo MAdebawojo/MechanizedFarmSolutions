@@ -17,7 +17,7 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background-color: red; */
+    background-color: #ebebeb;
 }
 
 h1 a{   
@@ -75,8 +75,8 @@ main {
 button
 {
     padding: 1.05em;
-    background-color: #0071BC;
-    border: 2px solid #0071BC;
+    background-color: #F26E21;
+    border: 2px solid #F26E21;
     border-radius: 5px;
     /* margin-bottom: 20px; */
     width: 8em;
@@ -90,7 +90,7 @@ button
 
 button:hover
 {
-    background-color: #06568b;
+    background-color: #e27a3e;
 }
 #forgotPasswordContainer{
     margin-top: 20px;
