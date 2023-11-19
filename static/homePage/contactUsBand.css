@@ -1,0 +1,71 @@
+ .contact-us-band {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #345C3E;
+    color: #F2F5F3;
+    height: 17vh;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    text-transform: capitalize;
+    /* margin-top: 150px; */
+    padding: 2em;
+}
+
+.pipe-border {
+    border: 1px solid #FFF;
+    height: 120px;
+}
+
+.contact-us-flex-item {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-us-flex-item img {
+    margin-bottom: 3px;
+}
+
+.contact-us-button {
+    background-color: #F26E21;
+    padding: 0.8em 0.5em;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    max-width:  300px; 
+    margin-right: 1em;
+}
+
+.contact-us-button p {
+    margin: 0;
+    margin-left: 5px; 
+}
+
+.contact-us-button::after {
+    content: '\2192'; /* Unicode character for right arrow */
+    font-size: 0.8em; /* Adjusted arrow size */
+    display: inline-block;
+    border-radius: 50%; /* Border-radius for a circle */
+    border: 2px solid #FFF; /* White outline for the circle */
+    padding: 0.2em; /* Padding for the circle */
+    margin-left: 3px; /* Space between text and circle */
+}
+
+.contact-us-button:hover {
+    background-color: #FF8C42;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .contact-us-band {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .pipe-border {
+        display: none;
+    }
+}

@@ -19,6 +19,8 @@
             padding: 20px;
             /* background-color: green; */
             background-image: url('../images/bgMachineCat.png'); 
+            background-size: cover; 
+            background-repeat: no-repeat;
         
         }
 

@@ -1,0 +1,115 @@
+footer {
+    background-color: rgba(17, 17, 17, 0.90);
+    color: white;
+    padding: 1.25em 0;
+    font-family: Roboto;
+padding: 7em;}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25em;
+}
+
+.subscribe-form p {
+    color: white;
+    margin-bottom: 10px;
+    flex: 100%;
+    text-align: center;
+    font-size: 1.2rem; 
+}
+
+.subscribe-form input {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem; 
+}
+
+.subscribe-form button {
+    width: 100%;
+    background-color: #025002;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; 
+}
+
+.section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-links li {
+    margin-bottom: 10px;
+}
+
+.section-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.section-links a:hover {
+    text-decoration: none;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.copyright a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    .subscribe-form p {
+        text-align: left;
+        font-size: 1.5rem; 
+    }
+
+    .subscribe-form input {
+        width: calc(70% - 10px);
+        margin-right: 10px;
+        font-size: 1rem; 
+    }
+
+    .subscribe-form button {
+        width: 30%;
+        font-size: 1rem; 
+    }
+
+    .section {
+        width: 25%;
+        float: left;
+        box-sizing: border-box;
+    }
+}
