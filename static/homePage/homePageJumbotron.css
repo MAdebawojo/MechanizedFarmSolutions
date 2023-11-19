@@ -91,7 +91,7 @@
         /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
         background-size: cover; /* Optional: This will make the image cover the entire element */
         background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
-        height: 60vh;
+        height: 62vh;
         color: #FFF;
         display: flex;
         justify-content: center;
@@ -128,10 +128,9 @@
     .jumbotron
     {
         background-image: url('../images/HomepageImage.png'); 
-        /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
-        background-size: cover; /* Optional: This will make the image cover the entire element */
-        background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
-        height: 75vh;
+        background-size: cover; 
+        background-repeat: no-repeat; 
+        height: 64vh;
         color: #FFF;
         display: flex;
         justify-content: center;
@@ -171,7 +170,7 @@
         /* Replace 'path-to-your-image.jpg' with the actual path to your image file */
         background-size: cover; /* Optional: This will make the image cover the entire element */
         background-repeat: no-repeat; /* Optional: This prevents the image from repeating */
-        height: 81vh;
+        height: 86vh;
         color: #FFF;
         display: flex;
         justify-content: center;
