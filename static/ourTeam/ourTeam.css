@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('../images/bgMachineCat.png');
+    background-size: cover;  
+}
+
+.title-texts {
+    text-align: center;
+}
+
+.title-texts h1, .roles h1{
+    /* background-color: pink; */
+    text-align: center;
+    font-size: 3rem;
+    padding: 1em;
+    font-weight: 700;
+ 
+}
+
+.title-texts p {
+    /* background-color: green; */
+    font-size: 1.5rem;
+    margin: 0 1em 0 1em;
+}
+
+.profile-cards {
+    padding: 2em;
+}
+
+.team-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-card img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 500px;
+
+}
+
+.team-info {
+    padding: 1em;
+}
+.bottom-text
+{
+    /* background-color: red; */
+    padding: 1em;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+@media (min-width: 768px) {
+    .profile-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .team-card {
+        flex: 0 0 calc(25% - 20px);
+        margin: 1px;
+    }
+}

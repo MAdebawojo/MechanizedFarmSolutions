@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-us-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/contactUsBgImage.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 40vh;
+}
+
+.contact-us-wrapper h1 {
+    color: #FFF;
+    text-align: center;
+    margin: 0;
+    font-family: Roboto;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.contact-details {
+    display: flex;
+    
+    flex-direction: row;
+    margin: 20px auto;
+    padding-inline: min(5vh, 20px);
+    flex-wrap: wrap;
+    justify-content: stretch;
+    margin-inline: auto;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.contact-details .info{
+    border: 1px solid #000000;
+    color: white;
+    background-color: #01340ECC;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 20px 40px;
+    flex-grow: 1;
+}
+
+.contact-details .info .title{
+    font-size: 2.25rem;
+    color: #FFF;
+    /* text-align: center; */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.contact-details h2
+{
+    color: black;
+    font-size: 2.25rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.submit-button
+{
+    background-color: #01340ECC;
+    color: #FFF;
+
+}
+.details-fill{
+    border: 1px solid #000000;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 20px 40px;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+}
+
+.details-fill p{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hl{
+    height: 3px;
+    width: 80%;
+    background-color: white;
+}
+
+.details-fill .hl{
+    background-color: black;
+}
+
+
+.map-parent{
+    display: flex;
+    justify-content: center;
+}
+.map {
+    display: block;
+    border: none;
+    height: 50vh;
+    width: 98vw;
+}
+
+
+input{
+    width: auto;
+    height: 2.5rem;
+    text-indent: min(20px, 1vw);
+    
+    min-width: 0;
+}
+
+input[type="submit"]{
+    text-indent: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+form div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+textarea{
+    height: 10rem;
+    text-indent: 2rem;
+}

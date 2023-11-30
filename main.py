@@ -38,20 +38,30 @@ bcrypt = Bcrypt(app)
 mail = Mail(app)
 serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
+
+# --------------------------Authentication- Begin------------------------------#
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template("homePage.html")
 
+@app.route('/contact-us')
+def contact_us():
+    return render_template("contactUsPage.html")
+
+@app.route('/our-team')
+def our_team():
+    return render_template("ourTeam.html")
+
 @app.route('/verify_email/<token>', methods=['GET'])
 def verify_email(token):
     """ Email verification route"""
     try:
-        email = serializer.loads(token, salt='email-verification', max_age=60)
+        email = serializer.loads(token, salt='email-verification', max_age=1440)
     except SignatureExpired:
         return '<h1>The token is expired!</h1>'
     except BadSignature:
-        return '<h1>The token is not valid!'
+        return '<h1>The token is not valid!</h1>'
     except Exception as e:
         return f'<h1>An error: {e} occured'
     user = users.find_one({'verification_token': token})
@@ -75,7 +85,7 @@ def login():
         password = request.form.get('password')
         user = users.find_one({'email': email})
         if user and bcrypt.check_password_hash(user.get('password', ''), password):
-            return render_template("logged_in.html")  # Replace with your logged-in template
+            return render_template("try.html")  # Replace with your logged-in template
         else:
             flash('Login unsuccessful. Please check email and password', 'danger')
     return render_template("userLoginPage.html")
@@ -113,7 +123,7 @@ def register():
                 users.insert_one(new_user)
                 msg = Message('Confirm Email', sender=app.config['MAIL_USERNAME'], recipients=[email])
                 link = url_for('verify_email', token=verification_token, external=True)
-                msg.body = f'Click {link} to activate your account'
+                msg.body = f'Click 127.0.0.1:5000{link} to activate your account'
                 mail.send(msg)
                 flash('A verification link has been sent to your email. Please check your inbox.', 'success')
                 return redirect(url_for('userLoginPage'))
@@ -121,6 +131,12 @@ def register():
                 flash(f"Error: {e}", 'danger')
         return render_template("userRegistrationPage.html")
     return render_template("userRegistrationPage.html")
+
+
+
+# --------------------------Authentication End-------------------------------#
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

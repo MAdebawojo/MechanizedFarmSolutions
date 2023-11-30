@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/homePage/nav.css">
+    <link rel="stylesheet" href="../static/contatctUs/contactUs.css">
+    <link rel="stylesheet" href="../static/homePage/footer.css">
+
+</head>
+<body>
+    <!-- The is the main Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-nav">
+        <a class="navbar-brand custom-logo" href="{{ url_for('home') }}">MFS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav custom-nav-items mx-auto">
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('our_team') }}">Our Team</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">News</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">Machinery Rentals</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">Emissions</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
+                </li>
+            </ul>
+            <div class="custom-login-signup">
+                <a class="nav-link nav-item custom-nav-border" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-link nav-item custom-nav-border" href="{{ url_for('register') }}">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Contact us Bg Image -->
+    <section class="contact-us-wrapper">
+        <h1>CONTACT US</h1>
+    </section>
+    <!-- End Contact us Bg Image -->
+
+    <!-- Contact Form -->
+    <section class="contact-details">
+        <div class="info">
+            <h2 class="title">Contact Details</h2>
+
+            <div class="group">
+                <div class="hl"></div>
+                <p class="c">Head Office address<br>Babcock University, Ogun State, Nigeria</p>
+            </div>
+
+            <div class="group">
+                <div class="hl"></div>
+                <p class="e">For Rental Support<br>+2347072554605<br>
+                    +2347053467234</p>
+            </div>
+
+            <div class="group">
+                <div class="hl"></div>
+                <p>The Office Hours<br>Mon - Fri 9.00 - 18.00</p>
+            </div>
+
+            <div class="group">
+                <div class="hl"></div>
+                <p class="i">Send Us Email<br>Lotastephen54@gmail.com</p>
+            </div>
+
+        </div>
+        <div class="details-fill">
+            <div>
+                <h2 class="title">Send A Message</h2>
+                <div class="hl"></div>
+            </div>
+
+            <p>Your Email Address Will Not Be Published. Required Fields Are Marked With *</p>
+            <form>
+                <div>
+                <input type="text" placeholder="Name..........*">
+                <input type="email" placeholder="email..........*">
+                </div>
+                <input class="name" type="text" placeholder="subject..........*"><br>
+                <textarea placeholder="Your Message......"></textarea><BR>
+                <input type="submit" value="SEND MESSAGE" class="submit-button">
+            </form>
+        </div>
+    </section>
+    <!-- End Contact Form -->
+
+    <!-- Map Section -->
+    <section class="map-parent">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9876403100952!2d3.715570274838129!3d6.
+        89208111877078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bd81639e54ec3%3A0x9129b4a8c83
+        67e52!2sBabcock%20University%20Ilishan%20Remo!5e0!3m2!1sen!2sng!4v1700061080171!5m2!1sen!2sng" 
+             allowfullscreen="" loading="lazy" referrerpolicy="no-ref
+        errer-when-downgrade"></iframe>
+    </section>
+    <!-- End Map Section -->
+
+     <!-- Footer -->
+     <footer>
+        <div class="container">
+            <!-- Section: Form -->
+            <section class="subscribe-form">
+                <p><strong style="color: white;">Sign up for our newsletter</strong></p>
+                <input type="email" placeholder="Enter email address">
+                <button>Subscribe</button>
+            </section>
+
+            <!-- Section: Text -->
+            <section class="section">
+                <h5 class="section-title">Company</h5>
+                <ul class="section-links">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Our Team</a></li>
+                </ul>
+            </section>
+
+            <!-- Section: Resources -->
+            <section class="section">
+                <h5 class="section-title">Resources</h5>
+                <ul class="section-links">
+                    <li><a href="#" class="text-white">Emissions</a></li>
+                    <li><a href="#" class="text-white">Machinery Rentals</a></li>
+                </ul>
+            </section>
+
+            <!-- Section: Docs -->
+            <section class="section">
+                <h5 class="section-title">Docs</h5>
+                <ul class="section-links">
+                    <li><a href="#" class="text-white">News</a></li>
+                    <li><a href="#" class="text-white">Blog</a></li>
+                </ul>
+            </section>
+
+            <!-- Section: Contact -->
+            <section class="section">
+                <h5 class="section-title">Contact Us</h5>
+                <ul class="section-links">
+                    <li><a href="#" class="text-white">Need Help</a></li>
+                    <li><a href="#" class="text-white">Customer Support</a></li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © 2023 Copyright: <a href="#" class="text-white">MFS</a>
+        </div>
+    </footer>
+    <!--  End Footer -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

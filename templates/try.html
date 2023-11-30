@@ -18,7 +18,6 @@
             justify-content: space-between;
             align-items: center;
             font-family: 'Inter', cursive;
-            /* width: 100%; */
         }
 
         .shopping-cart-nav h1 a {
@@ -46,16 +45,16 @@
 
         .search-input {
             flex: 1;
-            padding: 15px;
+            padding: 1em;
             border: none;
             border-radius: 3px;
         }
 
         .search-button {
-            background-color: #FF7A00;
+            background-color: #01340E; /* Updated background color */
             color: #FFF;
             border: none;
-            padding: 15px 15px;
+            padding: 1em;
             border-radius: 3px;
             margin-left: 10px;
             cursor: pointer;
@@ -64,55 +63,64 @@
         .cart-icons {
             display: flex;
             align-items: center;
-            margin-left: 10px;
+            margin-left: 0.625em;
         }
 
         .help-icon, .account-icon {
             display: flex;
             align-items: center;
-            margin-left:2.5em;
+            margin-left: 2.5em;
         }
-        .account-icon a
-        {
+
+        .account-icon a {
             margin-right: 2em;
             margin-left: 5px;
             text-decoration: none;
             color: #FFF;
         }
-        .help-icon a
-        {
+
+        .help-icon a {
             margin-left: 5px;
             text-decoration: none;
             color: #FFF;
         }
 
-        .help-icon a:hover, .account-icon a:hover
-        {
+        .help-icon a:hover, .account-icon a:hover {
             text-decoration: underline;
         }
 
+         /* cart body */
         .shopping-cart-wrapper {
             display: flex;
-            margin: 20px;
-            width: 80%; /* Adjusted width to 80% */
+            /* margin: 20px; */
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: red;
         }
 
-        .cart-summary {
-            margin-left: 6em;
-            width: 20%;
-            /* height: 60vh; */
+        .shopping-cart {
+            width: 60%;
+            /* border: 1px solid #ccc; */
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-right: 2em;
         }
 
+        .cart-summary,
         .payment-methods {
-            margin: 20px;
-            border: 1px solid #ccc; /* Added border */
-            padding: 20px; /* Added padding */
+            width: 100%;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            /* padding: 4.25em; */
+            margin-right: 0;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
-        /* Added Styles for Shopping Cart Section */
         .shopping-cart-section {
             width: 100%;
-            padding: 20px;
+            /* padding: 4.25em; */
             border: 1px solid #ccc;
             margin-top: 20px;
         }
@@ -125,12 +133,13 @@
         .cart-item {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 15px;
         }
 
         .item-image {
-            width: 150px; /* Adjusted image size to 70px */
-            height: 150px; /* Adjusted image size to 70px */
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             margin-right: 15px;
         }
@@ -142,7 +151,6 @@
         .item-quantity {
             display: flex;
             align-items: center;
-            margin-left: auto;
         }
 
         .quantity-btn {
@@ -152,7 +160,7 @@
             padding: 8px;
             border-radius: 50%;
             cursor: pointer;
-            margin: 0 5px;
+            /* margin: 0 5px; */
         }
 
         .delete-icon {
@@ -160,12 +168,12 @@
             cursor: pointer;
         }
 
-        /* Added Styles for Cart Summary Section */
         .cart-summary-section {
             width: 100%;
-            padding: 20px;
-            border: 1px solid #ccc;
+            /* padding: 20px; */
+            /* border: 1px solid #ccc; */
             margin-top: 20px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
         .summary-title {
@@ -180,15 +188,73 @@
         }
 
         .checkout-button {
-            background-color: #01340E;
+            background-color: #01340E; /* Updated background color */
             color: #FFF;
             font-weight: 600;
             font-size: 1.15rem;
             border: none;
-            padding: 15px;
+            padding: 1em;
             border-radius: 3px;
             cursor: pointer;
             width: 100%;
+        }
+
+        .payment-methods {
+            margin-top: 2.5em;
+        }
+
+        .payment-method-images {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .payment-method-images img {
+            max-width: 50px;
+            max-height: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .shopping-cart-wrapper {
+                flex-direction: column;
+                width: 100%;
+                background-color: green;
+            }
+
+            .shopping-cart,
+            .cart-summary,
+            .payment-methods {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .search-input,
+            .search-button {
+                padding: 0.5em;
+            }
+
+            /* Implementing a vertical nav */
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1em;
+            }
+
+            .cart-icons {
+                margin-top: 10px;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            /* Medium-sized screens (e.g., tablets) */
+            .shopping-cart-wrapper {
+                flex-direction: column;
+            }
+
+            .shopping-cart,
+            .cart-summary,
+            .payment-methods {
+                width: 100%;
+                margin-right: 0;
+            }
         }
     </style>
 </head>
@@ -197,10 +263,6 @@
     <!-- Navigation Bar -->
     <nav class="shopping-cart-nav">
         <h1><a href="homePage.html">MFS</a></h1>
-        <!-- <div class="location">
-            <span>Location</span>
-            <strong>Nigeria</strong>
-        </div> -->
         <div class="search-box">
             <div class="location">
                 <span>Location</span>
@@ -212,87 +274,85 @@
         <div class="cart-icons">
             <a href="#"><img src="../static/images/ShoppingCartImage.png" alt="Cart"></a>
             <div class="help-icon">
-               <img src="../static/images/Danger-Square.png" alt="Profile" class="profile-image">
-               <a href="#">Help</a>
-            </div>
-            <div class="account-icon">
-                <img src="../static/images/ProfileImage.png" alt="Profile" class="profile-image">
-                <a href="#">Account</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Shopping Cart Layout -->
-    <div class="shopping-cart-wrapper">
-        <!-- Shopping Cart Items Container -->
-        <div class="shopping-cart">
-            <div class="shopping-cart-section">
-                <h2 class="cart-title">Shopping Cart</h2>
-                <hr>
-                <div class="cart-item">
-                    <img src="../static/images/combineHarvester.png" alt="Item Image" class="item-image">
-                    <div class="item-details">
-                        <p>Combine Harvester</p>
-                        <p>Price: $20.00</p>
-                    </div>
-                    <div class="item-quantity">
-                        <button class="quantity-btn">-</button>
-                        <span>3</span>
-                        <button class="quantity-btn">+</button>
-                        <span class="delete-icon">&#10005;</span>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img src="../static/images/cultivator.png" alt="Item Image" class="item-image">
-                    <div class="item-details">
-                        <p>Cultivator</p>
-                        <p>Price: $20.00</p>
-                    </div>
-                    <div class="item-quantity">
-                        <button class="quantity-btn">-</button>
-                        <span>3</span>
-                        <button class="quantity-btn">+</button>
-                        <span class="delete-icon">&#10005;</span>
-                    </div>
-                </div>
-                <!-- Add more cart items as needed -->
-            </div>
-        </div>
-
-        <!-- Cart Summary Container -->
-        <div class="cart-summary">
-            <div class="cart-summary-section">
-                <h2 class="summary-title">Cart Summary</h2>
-                <div class="summary-item">
-                    <span>Subtotal:</span>
-                    <span>$60.00</span>
-                </div>
-                <div class="summary-item">
-                    <span>Delivery:</span>
-                    <span>$5.00</span>
-                </div>
-                <hr>
-                <div class="summary-item">
-                    <strong>Total:</strong>
-                    <strong>$65.00</strong>
-                </div>
-                <button class="checkout-button">Checkout</button>
-            </div>
-        </div>
-    </div>
-
-<!-- Payment Methods Container -->
-<div class="payment-methods" style="margin-top: 40px;"> <!-- Adjusted margin-top for space -->
-    <h2 class="summary-title">Payment Methods</h2>
-    <div class="payment-method-images">
-        <img src="../static/images/visa.png" alt="Visa">
-        <img src="../static/images/mastercard.png" alt="MasterCard">
-        <img src="../static/images/verve.png" alt="Verve">
-        <!-- Add more payment method images as needed -->
-    </div>
-</div>
-
-
-</body>
-</html>
-
+                <img src="../static/images/Danger-Square.png" alt="Profile" class="profile-image">
+                <a href="#">Help</a>
+             </div>
+             <div class="account-icon">
+                 <img src="../static/images/ProfileImage.png" alt="Profile" class="profile-image">
+                 <a href="#">Account</a>
+             </div>
+         </div>
+     </nav>
+ 
+     <!-- Shopping Cart Layout -->
+     <div class="shopping-cart-wrapper">
+         <!-- Shopping Cart Items Container -->
+         <div class="shopping-cart">
+             <div class="shopping-cart-section">
+                 <h2 class="cart-title">Shopping Cart</h2>
+                 <hr>
+                 <div class="cart-item">
+                     <img src="../static/images/combineHarvester.png" alt="Item Image" class="item-image">
+                     <div class="item-details">
+                         <p>Combine Harvester</p>
+                         <p>Price: $20.00</p>
+                     </div>
+                     <div class="item-quantity">
+                         <button class="quantity-btn">-</button>
+                         <span>3</span>
+                         <button class="quantity-btn">+</button>
+                         <span class="delete-icon">&#10005;</span>
+                     </div>
+                 </div>
+                 <div class="cart-item">
+                     <img src="../static/images/cultivator.png" alt="Item Image" class="item-image">
+                     <div class="item-details">
+                         <p>Cultivator</p>
+                         <p>Price: $20.00</p>
+                     </div>
+                     <div class="item-quantity">
+                         <button class="quantity-btn">-</button>
+                         <span>3</span>
+                         <button class="quantity-btn">+</button>
+                         <span class="delete-icon">&#10005;</span>
+                     </div>
+                 </div>
+                 <!-- Add more cart items as needed -->
+             </div>
+         </div>
+ 
+         <!-- Cart Summary Container -->
+         <div class="cart-summary">
+             <div class="cart-summary-section">
+                 <h2 class="summary-title">Cart Summary</h2>
+                 <div class="summary-item">
+                     <span>Subtotal:</span>
+                     <span>$60.00</span>
+                 </div>
+                 <div class="summary-item">
+                     <span>Delivery:</span>
+                     <span>$5.00</span>
+                 </div>
+                 <hr>
+                 <div class="summary-item">
+                     <strong>Total:</strong>
+                     <strong>$65.00</strong>
+                 </div>
+                 <button class="checkout-button">Checkout</button>
+             </div>
+         </div>
+ 
+         <!-- Payment Methods Container -->
+         <div class="payment-methods">
+             <h2 class="summary-title">Payment Methods</h2>
+             <div class="payment-method-images">
+                 <img src="../static/images/visa.png" alt="Visa">
+                 <img src="../static/images/mastercard.png" alt="MasterCard">
+                 <img src="../static/images/verve.png" alt="Verve">
+                 <!-- Add more payment method images as needed -->
+             </div>
+         </div>
+     </div>
+ </body>
+ </html>
+ 
