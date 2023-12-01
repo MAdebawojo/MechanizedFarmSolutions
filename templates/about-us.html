@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/homePage/nav.css">
+    <link rel="stylesheet" href="../static/homePage/footer.css">
+    <link rel="stylesheet" href="../static/about-us/about-us.css">
+    
+    <title>Mechanized Farming</title>
+</head>
+<body>
+     <!-- The is the main Nav bar -->
+     <nav class="navbar navbar-expand-lg navbar-light custom-nav">
+        <a class="navbar-brand custom-logo" href="{{ url_for('home') }}">MFS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav custom-nav-items mx-auto">
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('our_team') }}">Our Team</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">Machinery Rentals</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="#">Emissions</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
+                </li>
+            </ul>
+            <div class="custom-login-signup">
+                <a class="nav-link nav-item custom-nav-border" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-link nav-item custom-nav-border" href="{{ url_for('register') }}">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Welcome to MFS</h1>
+        <p>Where innovation meets agriculture! We are here to assist you on all your mechanized farming needs ranging from rental services to education about mechanized tools.<br> We are dedicated to revolutionizing the agricultural sector. We present sustainable agricultural techniques that put biodiversity, water conservation, and soil health first. <br>We embrace eco-friendly approaches. Our objective is to promote a cooperative link between environmentally conscious farming and technology-driven agriculture.
+
+        </p>
+    </header>
+
+    <section id="rentals" class="blog-section">
+        <h2>Rental Services</h2>
+        <p>Explore our range of top-quality mechanized farming equipment available for rent. Affordable solutions to enhance your farming experience.</p>
+        <p>Whether you need tractors, plows, or harvesters, we've got you covered. Our rental services are tailored to meet the diverse needs of modern farmers.</p>
+        <p>Take advantage of our flexible rental plans and experience the convenience of using advanced machinery without the hefty price tag.</p>
+    </section>
+
+    <section id="blogs" class="blog-section">
+        <h2>Blogs</h2>
+        <p>Stay informed with our insightful blogs covering various aspects of modern farming techniques, tips, and industry updates.</p>
+        <p>Read about the latest advancements in precision farming, sustainable agriculture, and how technology is revolutionizing the way we cultivate our lands.</p>
+        <p>Our expert bloggers share their knowledge and experiences to help you stay ahead in the ever-evolving world of mechanized farming.</p>
+    </section>
+
+    <section id="tools" class="blog-section">
+        <h2>Mechanized Tools</h2>
+        <p>Discover cutting-edge mechanized tools designed to make your farming tasks more efficient and productive.</p>
+        <p>From smart irrigation systems to GPS-guided planting equipment, our mechanized tools are at the forefront of agricultural innovation.</p>
+        <p>Explore our catalog to find the right tools for your specific needs, and revolutionize the way you approach every aspect of your farming operation.</p>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+                <!-- Section: Form -->
+                <section class="subscribe-form">
+                    <p><strong style="color: white;">Sign up for our newsletter</strong></p>
+                    <input type="email" placeholder="Enter email address">
+                    <button>Subscribe</button>
+                </section>
+    
+                <!-- Section: Text -->
+                <section class="section">
+                    <h5 class="section-title">Company</h5>
+                    <ul class="section-links">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Our Team</a></li>
+                    </ul>
+                </section>
+    
+                <!-- Section: Resources -->
+                <section class="section">
+                    <h5 class="section-title">Resources</h5>
+                    <ul class="section-links">
+                        <li><a href="#" class="text-white">Emissions</a></li>
+                        <li><a href="#" class="text-white">Machinery Rentals</a></li>
+                    </ul>
+                </section>
+    
+                <!-- Section: Docs -->
+                <section class="section">
+                    <h5 class="section-title">Docs</h5>
+                    <ul class="section-links">
+                        <li><a href="#" class="text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-white">Blog</a></li>
+                    </ul>
+                </section>
+    
+                <!-- Section: Contact -->
+                <section class="section">
+                    <h5 class="section-title">Contact Us</h5>
+                    <ul class="section-links">
+                        <li><a href="#" class="text-white">Need Help</a></li>
+                        <li><a href="#" class="text-white">Customer Support</a></li>
+                    </ul>
+                </section>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2023 Copyright: <a href="#" class="text-white">MFS</a>
+            </div>
+        </footer>
+        <!--  End Footer -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

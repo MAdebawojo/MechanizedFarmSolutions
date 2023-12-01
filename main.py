@@ -40,19 +40,6 @@ serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 
 
 # --------------------------Authentication- Begin------------------------------#
-@app.route('/')
-@app.route('/home')
-def home():
-    return render_template("homePage.html")
-
-@app.route('/contact-us')
-def contact_us():
-    return render_template("contactUsPage.html")
-
-@app.route('/our-team')
-def our_team():
-    return render_template("ourTeam.html")
-
 @app.route('/verify_email/<token>', methods=['GET'])
 def verify_email(token):
     """ Email verification route"""
@@ -132,11 +119,49 @@ def register():
         return render_template("userRegistrationPage.html")
     return render_template("userRegistrationPage.html")
 
-
-
 # --------------------------Authentication End-------------------------------#
 
+#--------------------------- Machine Rentals---------------------------------#
+@app.route('/machine-rentals/shop')
+def shop():
+    return render_template("./machineRentals/shop.html")
 
+@app.route('/machine-rentals/cart')
+def cart():
+    return render_template("./machineRentals/cart.html")
+
+@app.route('/machine-rentals/detail')
+def detail():
+    return render_template("./machineRentals/detail.html")
+
+@app.route('/machine-rentals/checkout')
+def checkout():
+    return render_template("./machineRentals/checkout.html")
+#---------------------------End Machine Rentals---------------------------------#
+
+#---------------------------Other Pages----------------------------------------#
+
+@app.route('/')
+@app.route('/home')
+def home():
+    return render_template("homePage.html")
+
+@app.route('/contact-us')
+def contact_us():
+    return render_template("contactUsPage.html")
+
+@app.route('/testimonials')
+def testimonials():
+    return render_template("testimonials.html")
+
+@app.route('/our-team')
+def our_team():
+    return render_template("ourTeam.html")
+
+@app.route('/about-us')
+def about_us():
+    return render_template("about-us.html")
+#---------------------------End Other Pages-------------------------------------#
 
 if __name__ == "__main__":
     app.run(debug=True)

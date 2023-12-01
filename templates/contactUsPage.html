@@ -23,19 +23,19 @@
                     <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="{{url_for('about_us')}}">About Us</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="{{ url_for('our_team') }}">Our Team</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">News</a>
+                    <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">Machinery Rentals</a>
+                    <a class="nav-link" href="{{url_for('shop')}}">Machinery Rentals</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="#">Emissions</a>
@@ -146,7 +146,7 @@
             <section class="section">
                 <h5 class="section-title">Docs</h5>
                 <ul class="section-links">
-                    <li><a href="#" class="text-white">News</a></li>
+                    <li><a href="#" class="text-white">Testimonials</a></li>
                     <li><a href="#" class="text-white">Blog</a></li>
                 </ul>
             </section>
