@@ -72,7 +72,7 @@ def login():
         password = request.form.get('password')
         user = users.find_one({'email': email})
         if user and bcrypt.check_password_hash(user.get('password', ''), password):
-            return render_template("try.html")  # Replace with your logged-in template
+            return redirect(url_for('shop'))  # Replace with your logged-in template
         else:
             flash('Login unsuccessful. Please check email and password', 'danger')
     return render_template("userLoginPage.html")

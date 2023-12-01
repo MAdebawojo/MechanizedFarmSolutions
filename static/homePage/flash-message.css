@@ -1,0 +1,36 @@
+/* CSS for Flash Messages */
+#flash-messages {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    margin: 10px;
+    z-index: 1000;
+}
+
+.flash {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.flash li {
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8d7da; /* Use appropriate background color */
+    color: #721c24; /* Use appropriate text color */
+    border-radius: 4px;
+}
+
+.flash.success li {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.error li {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Add more styles for different flash message types if needed */
