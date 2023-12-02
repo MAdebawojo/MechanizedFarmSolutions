@@ -239,7 +239,7 @@
                                                     </td>
                                                     <td class="align-middle">${product.price * item.quantity}</td>
                                                     <td class="align-middle">
-                                                        <button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button>
+                                                        <button class="btn btn-sm btn-danger" onclick="deleteItemFromCart(${product.id}, {{products}})"><i class="fa fa-times"></i></button>
                                                     </td>
                                                 </tr>
                                             `);
