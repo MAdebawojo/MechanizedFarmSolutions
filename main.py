@@ -126,7 +126,7 @@ products = [
     {
         "id": 1,
         "name": "Combine Harvester",
-        "price": 205.00,
+        "price": 205000.00,
         "image": "../../static/machineRentals/img/shopImages/product-1.jpg",
         "rating": 5,
         "reviews": 99,
@@ -135,7 +135,7 @@ products = [
     {
         "id": 2,
         "name": "Harrow",
-        "price": 123.00,
+        "price": 123000.00,
         "image": "../../static/machineRentals/img/shopImages/product-2.jpg",
         "rating": 4.5,
         "reviews": 99,
@@ -144,7 +144,7 @@ products = [
     {
         "id": 3,
         "name": "Rake",
-        "price": 99.00,
+        "price": 99000.00,
         "image": "../../static/machineRentals/img/shopImages/product-3.jpg",
         "rating": 4,
         "reviews": 99,
@@ -153,7 +153,7 @@ products = [
     {
         "id": 4,
         "name": "Roller",
-        "price": 321.00,
+        "price": 321000.00,
         "image": "../../static/machineRentals/img/shopImages/product-4.jpg",
         "rating": 3.5,
         "reviews": 99,
@@ -162,7 +162,7 @@ products = [
     {
         "id": 5,
         "name": "Harvester",
-        "price": 123.00,
+        "price": 123000.00,
         "image": "../../static/machineRentals/img/shopImages/product-5.jpg",
         "rating": 3,
         "reviews": 99,
@@ -171,7 +171,7 @@ products = [
     {
         "id": 6,
         "name": "Sprayer",
-        "price": 98.00,
+        "price": 98000.00,
         "image": "../../static/machineRentals/img/shopImages/product-6.jpg",
         "rating": 4.5,
         "reviews": 99,
@@ -180,7 +180,7 @@ products = [
     {
         "id": 7,
         "name": "Tractor",
-        "price": 456.00,
+        "price": 456000.00,
         "image": "../../static/machineRentals/img/shopImages/product-7.jpg",
         "rating": 4,
         "reviews": 99,
@@ -189,7 +189,7 @@ products = [
     {
         "id": 8,
         "name": "Roller 2",
-        "price": 321.00,
+        "price": 321000.00,
         "image": "../../static/machineRentals/img/shopImages/product-8.jpg",
         "rating": 3.5,
         "reviews": 99,

@@ -148,7 +148,6 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="{{url_for('home')}}" class="nav-item nav-link">Home</a>
                         <a href="{{url_for('shop')}}" class="nav-item nav-link active">Shop</a>
-                        <a href="{{url_for('detail')}}" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -239,7 +238,7 @@
                         </div>
                         <small class="pt-1">({{product.reviews}} Reviews)</small>
                     </div>
-                    <h3 class="font-weight-semi-bold mb-4">${{product.price}}</h3>
+                    <h3 class="font-weight-semi-bold mb-4">₦{{product.price}}</h3>
                     <p class="mb-4">{{product.description}}</p>
                     <!-- <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
@@ -463,7 +462,7 @@
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-truncate" href="/machine-rentals/product/{{product.id}}">{{product.name}}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>${{product.price}}</h5><h6 class="text-muted ml-2"><del>${{product.price}}</del></h6>
+                                    <h5>₦{{product.price}}</h5><h6 class="text-muted ml-2"><del>₦{{product.price}}</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                         {% set full_stars = product.rating | int %}
