@@ -99,6 +99,7 @@
         }
         button.parent().parent().find('input').val(newVal);
     });
+
+    // use local storage to store the cart items in format [{id: 1, quantity: 2}, {id: 2, quantity: 1}]
     
 })(jQuery);
-

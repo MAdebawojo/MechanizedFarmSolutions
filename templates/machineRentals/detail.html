@@ -24,6 +24,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../../static/machineRentals/css/style.css" rel="stylesheet">
+    <script src="../../static/machineRentals/js/cart.js"></script>
 </head>
 
 <body>
@@ -197,7 +198,7 @@
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
                         <!-- <div class="carousel-item active"> -->
-                            <img class="w-100 h-100" src="../../static/machineRentals/img/shopImages/product-1.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{product.image}}" alt="Image">
                         <!-- </div> -->
                         <!-- <div class="carousel-item">
                             <img class="w-100 h-100" src="img/product-2.jpg" alt="Image">
@@ -220,19 +221,26 @@
 
             <div class="col-lg-7 h-auto mb-30">
                 <div class="h-100 bg-light p-30">
-                    <h3>Combine Harvester</h3>
+                    <h3>{{product.name}}</h3>
                     <div class="d-flex mb-3">
                         <div class="text-primary mr-2">
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star-half-alt"></small>
-                            <small class="far fa-star"></small>
+                            {% set full_stars = product.rating | int %}
+                            {% set half_star = product.rating | round(0) %}
+
+                            {% for _ in range(5) %}
+                                {% if _ < full_stars %}
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                {% elif _ == full_stars and half_star > 0 %}
+                                    <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                                {% else %}
+                                    <small class="far fa-star text-primary mr-1"></small>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        <small class="pt-1">(99 Reviews)</small>
+                        <small class="pt-1">({{product.reviews}} Reviews)</small>
                     </div>
-                    <h3 class="font-weight-semi-bold mb-4">$150.00</h3>
-                    <p class="mb-4">The ultimate grain harvesting solution, our Combine Harvester efficiently gathers and threshes crops in a single pass.</p>
+                    <h3 class="font-weight-semi-bold mb-4">${{product.price}}</h3>
+                    <p class="mb-4">{{product.description}}</p>
                     <!-- <div class="d-flex mb-3">
                         <strong class="text-dark mr-3">Sizes:</strong>
                         <form>
@@ -283,6 +291,7 @@
                             </div>
                         </form>
                     </div> -->
+                    <!-- cart is stored in localstorage in the format [{id, amount}] -->
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
@@ -290,14 +299,17 @@
                                     <i class="fa fa-minus"></i>
                                 </button>
                             </div>
-                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1" id="quantity" readonly>
                             <div class="input-group-btn">
                                 <button class="btn btn-primary btn-plus">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
-                        <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
+                        <!-- add product id to cart with addToCart(product.id) onclick -->
+                        <button class="btn btn-primary px-3"
+                            onclick="addToCart({{product.id}}, Number(document.getElementById('quantity').value), {{products}})"
+                        ><i class="fa fa-shopping-cart mr-1"></i> Add To
                             Cart</button>
                     </div>
                     <div class="d-flex pt-2">
@@ -437,131 +449,40 @@
         <div class="row px-xl-5">
             <div class="col">
                 <div class="owl-carousel related-carousel">
-                    <div class="product-item bg-light">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="../../static/machineRentals/img/shopImages/product-2.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                    {% for product in products %}
+                        <div class="product-item bg-light">
+                            <div class="product-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="{{product.image}}" alt="">
+                                <div class="product-action">
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <a class="h6 text-decoration-none text-truncate" href="/machine-rentals/product/{{product.id}}">{{product.name}}</a>
+                                <div class="d-flex align-items-center justify-content-center mt-2">
+                                    <h5>${{product.price}}</h5><h6 class="text-muted ml-2"><del>${{product.price}}</del></h6>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center mb-1">
+                                        {% set full_stars = product.rating | int %}
+                                        {% set half_star = product.rating | round(0) %}
+
+                                        {% for _ in range(5) %}
+                                            {% if _ < full_stars %}
+                                                <small class="fa fa-star text-primary mr-1"></small>
+                                            {% elif _ == full_stars and half_star > 0 %}
+                                                <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                                            {% else %}
+                                                <small class="far fa-star text-primary mr-1"></small>
+                                            {% endif %}
+                                        {% endfor %}
+                                    <small>({{product.reviews}})</small>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="">Harrow</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item bg-light">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="../../static/machineRentals/img/shopImages/product-3.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="">Rake</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item bg-light">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="../../static/machineRentals/img/shopImages/product-4.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="">Roller</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item bg-light">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="../../static/machineRentals/img/shopImages/product-5.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="">Harvester</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-item bg-light">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="../../static/machineRentals/img/shopImages/product-6.jpg" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="">Sprayer</a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

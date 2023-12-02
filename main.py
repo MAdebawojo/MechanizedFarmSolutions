@@ -121,14 +121,97 @@ def register():
 
 # --------------------------Authentication End-------------------------------#
 
+# --------------------------Product Data-------------------------------------#
+products = [
+    {
+        "id": 1,
+        "name": "Combine Harvester",
+        "price": 205.00,
+        "image": "../../static/machineRentals/img/shopImages/product-1.jpg",
+        "rating": 5,
+        "reviews": 99,
+        "description": "The ultimate grain harvesting solution, our Combine Harvester efficiently gathers and threshes crops in a single pass."
+    },
+    {
+        "id": 2,
+        "name": "Harrow",
+        "price": 123.00,
+        "image": "../../static/machineRentals/img/shopImages/product-2.jpg",
+        "rating": 4.5,
+        "reviews": 99,
+        "description": "A harrow is an implement for breaking up and smoothing out the surface of the soil. In this way it is distinct in its effect from the plough, which is used for deeper tillage."
+    },
+    {
+        "id": 3,
+        "name": "Rake",
+        "price": 99.00,
+        "image": "../../static/machineRentals/img/shopImages/product-3.jpg",
+        "rating": 4,
+        "reviews": 99,
+        "description": "A rake is a broom for outside use; a horticultural implement consisting of a toothed bar fixed transversely to a handle, and used to collect leaves, hay, grass, etc., and in gardening, for loosening the soil, light weeding and levelling, removing dead grass from lawns, and generally for purposes performed in agriculture by the harrow."
+    },
+    {
+        "id": 4,
+        "name": "Roller",
+        "price": 321.00,
+        "image": "../../static/machineRentals/img/shopImages/product-4.jpg",
+        "rating": 3.5,
+        "reviews": 99,
+        "description": "A lawn roller is a huge tool that is used for flattening the ground. It is a heavy cylinder that is attached to a handle and is rolled over the ground to flatten it."
+    },
+    {
+        "id": 5,
+        "name": "Harvester",
+        "price": 123.00,
+        "image": "../../static/machineRentals/img/shopImages/product-5.jpg",
+        "rating": 3,
+        "reviews": 99,
+        "description": "A harvester is a machine that reaps (cuts and often also gathers) grain crops at harvest when they are ripe."
+    },
+    {
+        "id": 6,
+        "name": "Sprayer",
+        "price": 98.00,
+        "image": "../../static/machineRentals/img/shopImages/product-6.jpg",
+        "rating": 4.5,
+        "reviews": 99,
+        "description": "A sprayer is a device used to spray a liquid, where sprayers are commonly used for projection of water, weed killers, crop performance materials, pest maintenance chemicals, as well as manufacturing and production line ingredients."
+    },
+    {
+        "id": 7,
+        "name": "Tractor",
+        "price": 456.00,
+        "image": "../../static/machineRentals/img/shopImages/product-7.jpg",
+        "rating": 4,
+        "reviews": 99,
+        "description": "A tractor is an engineering vehicle specifically designed to deliver a high tractive effort (or torque) at slow speeds, for the purposes of hauling a trailer or machinery such as that used in agriculture, mining or construction."
+    },
+    {
+        "id": 8,
+        "name": "Roller 2",
+        "price": 321.00,
+        "image": "../../static/machineRentals/img/shopImages/product-8.jpg",
+        "rating": 3.5,
+        "reviews": 99,
+        "description": "A lawn roller is a huge tool that is used for flattening the ground. It is a heavy cylinder that is attached to a handle and is rolled over the ground to flatten it."
+    }
+]
+# --------------------------End Product Data---------------------------------#
+
 #--------------------------- Machine Rentals---------------------------------#
 @app.route('/machine-rentals/shop')
 def shop():
-    return render_template("./machineRentals/shop.html")
+    return render_template("./machineRentals/shop.html", products=products)
+
+# Get product by id
+@app.route('/machine-rentals/product/<int:id>')
+def product(id):
+    product = [product for product in products if product['id'] == id]
+    return render_template("./machineRentals/detail.html", products=products, product=product[0])
 
 @app.route('/machine-rentals/cart')
 def cart():
-    return render_template("./machineRentals/cart.html")
+    return render_template("./machineRentals/cart.html", products=products)
 
 @app.route('/machine-rentals/detail')
 def detail():
@@ -165,44 +248,6 @@ def about_us():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # import json
