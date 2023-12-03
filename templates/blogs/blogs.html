@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs Mechanized Farming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #345D3E;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .section {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #e0e0e0;
+            border: 2px solid #345D3E;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #345D3E;
+            border-bottom: 2px solid #345D3E;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #345D3E;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+       
+        a:hover {
+            background-color: #2C4B32;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 10px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="{{url_for('home')}}"><h1>BLOGS</h1></a>
+    </header>
+
+    <section class="section">
+        <h2>Embracing Healthy Farm Practices for Sustainable Agriculture</h2>
+        <p>
+            In an era where the importance of sustainable living is gaining prominence, healthy farm practices are at
+            the forefront of creating a resilient and eco-friendly agricultural system. This blog delves into the
+            principles and benefits of adopting practices that prioritize the well-being of the land, the crops, and
+            the communities that rely on them.
+        </p>
+        <a href="{{url_for('blogs_health')}}" >Read more</a>
+    </section>
+
+    <section class="section">
+        <h2>Mechanized tools</h2>
+        <p>Farming has undergone a remarkable transformation with the advent of mechanized tools. These advanced
+            technologies have revolutionized traditional farming methods, significantly enhancing efficiency and
+            productivity. This blog explores the key mechanized tools that have become indispensable in modern
+            agriculture.</p>
+        <a href="{{url_for('blogs_mechanized_tools')}}">Read more</a>
+    </section>
+    <section class="section">
+
+        <h2>Grants Application guide</h2>
+        <p>Securing grants is a crucial step for individuals, non-profit organizations, and businesses looking to fund
+            projects, research, or community initiatives. Grants provide financial support without the need for
+            repayment, making them an attractive option for those with innovative ideas and a commitment to positive
+            change. In this blog post, we'll explore a step-by-step guide on how to navigate the grant application process and increase your chances of success.</p>
+        <a href="{{url_for('blogs_grants')}}">Read more</a>
+    </section>
+    <section class="section">
+    <h2>The future of farming</h2>
+        <p>In an era where technological advancements are reshaping industries, agriculture stands at the forefront of a
+            revolution – a revolution powered by modern mechanized techniques. The days of traditional farming are
+            gradually giving way to innovative practices that not only increase efficiency but also promise a
+            sustainable future for our planet. Join us on a journey into the future of farming as we explore and
+            unravel the intricacies of modern mechanized techniques.</p>
+        <a href="{{url_for('blogs_future')}}" >Read more</a>
+    </section>
+
+    <section class="section">
+        <h2>Farm machinery maintenance</h2>
+        <p> In the world of modern agriculture, farm machinery is the backbone of efficiency and productivity. From
+            tractors to combines, these powerful tools play a crucial role in cultivating and harvesting crops. To
+            ensure that your farm machinery operates at its peak performance and longevity, regular maintenance is
+            key. In this blog, we'll explore essential maintenance tips that every farmer should incorporate into
+            their routine.
+        </p>
+        <a href="{{url_for('blogs_maintenance')}}">Read more</a>
+        </section>
+    
+</body>
+</html>
+
+

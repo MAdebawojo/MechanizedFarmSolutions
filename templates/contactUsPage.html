@@ -11,8 +11,8 @@
 
 </head>
 <body>
-    <!-- The is the main Nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light custom-nav">
+      <!-- The is the main Nav bar -->
+      <nav class="navbar navbar-expand-lg navbar-light custom-nav">
         <a class="navbar-brand custom-logo" href="{{ url_for('home') }}">MFS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="{{url_for('about_us')}}">About Us</a>
+                    <a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="{{ url_for('our_team') }}">Our Team</a>
@@ -32,13 +32,13 @@
                     <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{{ url_for('blogs') }}">Blog</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="{{url_for('shop')}}">Machinery Rentals</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">Emissions</a>
+                    <a class="nav-link" href="{{ url_for('carbon_emission') }}">Emissions</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
@@ -113,60 +113,60 @@
     </section>
     <!-- End Map Section -->
 
-     <!-- Footer -->
-     <footer>
+         <!-- Footer -->
+    <footer>
         <div class="container">
-            <!-- Section: Form -->
-            <section class="subscribe-form">
-                <p><strong style="color: white;">Sign up for our newsletter</strong></p>
-                <input type="email" placeholder="Enter email address">
-                <button>Subscribe</button>
-            </section>
-
-            <!-- Section: Text -->
-            <section class="section">
-                <h5 class="section-title">Company</h5>
-                <ul class="section-links">
-                    <li><a href="#" class="text-white">Home</a></li>
-                    <li><a href="#" class="text-white">About Us</a></li>
-                    <li><a href="#" class="text-white">Our Team</a></li>
-                </ul>
-            </section>
-
-            <!-- Section: Resources -->
-            <section class="section">
-                <h5 class="section-title">Resources</h5>
-                <ul class="section-links">
-                    <li><a href="#" class="text-white">Emissions</a></li>
-                    <li><a href="#" class="text-white">Machinery Rentals</a></li>
-                </ul>
-            </section>
-
-            <!-- Section: Docs -->
-            <section class="section">
-                <h5 class="section-title">Docs</h5>
-                <ul class="section-links">
-                    <li><a href="#" class="text-white">Testimonials</a></li>
-                    <li><a href="#" class="text-white">Blog</a></li>
-                </ul>
-            </section>
-
-            <!-- Section: Contact -->
-            <section class="section">
-                <h5 class="section-title">Contact Us</h5>
-                <ul class="section-links">
-                    <li><a href="#" class="text-white">Need Help</a></li>
-                    <li><a href="#" class="text-white">Customer Support</a></li>
-                </ul>
-            </section>
-        </div>
-
-        <!-- Copyright -->
-        <div class="copyright">
-            © 2023 Copyright: <a href="#" class="text-white">MFS</a>
-        </div>
-    </footer>
-    <!--  End Footer -->
+                <!-- Section: Form -->
+                <section class="subscribe-form">
+                    <p><strong style="color: white;">Sign up for our newsletter</strong></p>
+                    <input type="email" placeholder="Enter email address">
+                    <button>Subscribe</button>
+                </section>
+    
+                <!-- Section: Text -->
+                <section class="section">
+                    <h5 class="section-title">Company</h5>
+                    <ul class="section-links">
+                        <li><a href="{{url_for('home')}}" class="text-white">Home</a></li>
+                        <li><a href="{{url_for('about_us')}}" class="text-white">About Us</a></li>
+                        <li><a href="{{url_for('our_team')}}" class="text-white">Our Team</a></li>
+                    </ul>
+                </section>
+    
+                <!-- Section: Resources -->
+                <section class="section">
+                    <h5 class="section-title">Resources</h5>
+                    <ul class="section-links">
+                        <li><a href="{{url_for('carbon_emission')}}" class="text-white">Emissions</a></li>
+                        <li><a href="{{url_for('shop')}}" class="text-white">Machinery Rentals</a></li>
+                    </ul>
+                </section>
+    
+                <!-- Section: Docs -->
+                <section class="section">
+                    <h5 class="section-title">Docs</h5>
+                    <ul class="section-links">
+                        <li><a href="{{url_for('testimonials')}}" class="text-white">Testimonials</a></li>
+                        <li><a href="{{url_for('blogs')}}" class="text-white">Blog</a></li>
+                    </ul>
+                </section>
+    
+                <!-- Section: Contact -->
+                <section class="section">
+                    <h5 class="section-title">Contact Us</h5>
+                    <ul class="section-links">
+                        <li><a href="{{url_for('contact_us')}}" class="text-white">Need Help</a></li>
+                        <li><a href="{{url_for('contact_us')}}" class="text-white">Customer Support</a></li>
+                    </ul>
+                </section>
+            </div>
+    
+            <!-- Copyright -->
+            <div class="copyright">
+                © 2023 Copyright: <a href="{{url_for('home')}}" class="text-white">MFS</a>
+            </div>
+        </footer>
+        <!--  End Footer -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

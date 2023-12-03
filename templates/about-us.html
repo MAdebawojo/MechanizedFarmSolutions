@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="{{ url_for('our_team') }}">Our Team</a>
@@ -32,13 +32,13 @@
                     <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="{{ url_for('blogs') }}">Blog</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">Machinery Rentals</a>
+                    <a class="nav-link" href="{{url_for('shop')}}">Machinery Rentals</a>
                 </li>
                 <li class="nav-item custom-nav-items">
-                    <a class="nav-link" href="#">Emissions</a>
+                    <a class="nav-link" href="{{ url_for('carbon_emission') }}">Emissions</a>
                 </li>
                 <li class="nav-item custom-nav-items">
                     <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
@@ -52,9 +52,7 @@
     </nav>
     <header>
         <h1>Welcome to MFS</h1>
-        <p>Where innovation meets agriculture! We are here to assist you on all your mechanized farming needs ranging from rental services to education about mechanized tools.<br> We are dedicated to revolutionizing the agricultural sector. We present sustainable agricultural techniques that put biodiversity, water conservation, and soil health first. <br>We embrace eco-friendly approaches. Our objective is to promote a cooperative link between environmentally conscious farming and technology-driven agriculture.
-
-        </p>
+        <!-- <p>Revolutionizing agriculture with eco-friendly tech solutions.</p> -->
     </header>
 
     <section id="rentals" class="blog-section">
@@ -91,9 +89,9 @@
                 <section class="section">
                     <h5 class="section-title">Company</h5>
                     <ul class="section-links">
-                        <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">About Us</a></li>
-                        <li><a href="#" class="text-white">Our Team</a></li>
+                        <li><a href="{{url_for('home')}}" class="text-white">Home</a></li>
+                        <li><a href="{{url_for('about_us')}}" class="text-white">About Us</a></li>
+                        <li><a href="{{url_for('our_team')}}" class="text-white">Our Team</a></li>
                     </ul>
                 </section>
     
@@ -101,8 +99,8 @@
                 <section class="section">
                     <h5 class="section-title">Resources</h5>
                     <ul class="section-links">
-                        <li><a href="#" class="text-white">Emissions</a></li>
-                        <li><a href="#" class="text-white">Machinery Rentals</a></li>
+                        <li><a href="{{url_for('carbon_emission')}}" class="text-white">Emissions</a></li>
+                        <li><a href="{{url_for('shop')}}" class="text-white">Machinery Rentals</a></li>
                     </ul>
                 </section>
     
@@ -110,8 +108,8 @@
                 <section class="section">
                     <h5 class="section-title">Docs</h5>
                     <ul class="section-links">
-                        <li><a href="#" class="text-white">Testimonials</a></li>
-                        <li><a href="#" class="text-white">Blog</a></li>
+                        <li><a href="{{url_for('testimonials')}}" class="text-white">Testimonials</a></li>
+                        <li><a href="{{url_for('blogs')}}" class="text-white">Blog</a></li>
                     </ul>
                 </section>
     
@@ -119,15 +117,15 @@
                 <section class="section">
                     <h5 class="section-title">Contact Us</h5>
                     <ul class="section-links">
-                        <li><a href="#" class="text-white">Need Help</a></li>
-                        <li><a href="#" class="text-white">Customer Support</a></li>
+                        <li><a href="{{url_for('contact_us')}}" class="text-white">Need Help</a></li>
+                        <li><a href="{{url_for('contact_us')}}" class="text-white">Customer Support</a></li>
                     </ul>
                 </section>
             </div>
     
             <!-- Copyright -->
             <div class="copyright">
-                © 2023 Copyright: <a href="#" class="text-white">MFS</a>
+                © 2023 Copyright: <a href="{{url_for('home')}}" class="text-white">MFS</a>
             </div>
         </footer>
         <!--  End Footer -->

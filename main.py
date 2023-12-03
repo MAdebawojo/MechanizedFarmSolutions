@@ -72,6 +72,7 @@ def login():
         password = request.form.get('password')
         user = users.find_one({'email': email})
         if user and bcrypt.check_password_hash(user.get('password', ''), password):
+            flash('Login successful.', 'success')
             return redirect(url_for('shop'))  # Replace with your logged-in template
         else:
             flash('Login unsuccessful. Please check email and password', 'danger')
@@ -112,12 +113,51 @@ def register():
                 link = url_for('verify_email', token=verification_token, external=True)
                 msg.body = f'Click 127.0.0.1:5000{link} to activate your account'
                 mail.send(msg)
-                flash('A verification link has been sent to your email. Please check your inbox.', 'success')
-                return redirect(url_for('userLoginPage'))
+                # flash('A verification link has been sent to your email. Please check your inbox.', 'success')
+                # return redirect(url_for('email_verification_page'))
+                return render_template('emailVerificationPage.html')
+
             except Exception as e:
                 flash(f"Error: {e}", 'danger')
         return render_template("userRegistrationPage.html")
     return render_template("userRegistrationPage.html")
+
+
+@app.route('/verify-email', methods=['POST'])
+def email_verification_page():
+    return render_template('emailVerificationPage.html')
+
+@app.route('/resend_verification', methods=['POST'])
+def resend_verification():
+    if request.method == 'POST':
+        email = request.json.get('email')  # Assuming you send the email in the request body
+        if email:
+            user = users.find_one({'email': email})
+            if user:
+                # Generate a new verification token
+                new_verification_token = serializer.dumps(email, salt='email-verification')
+
+                # Update the user's document in the MongoDB database with the new token
+                users.update_one({'_id': user['_id']}, {'$set': {'verification_token': new_verification_token}})
+
+                # Send the new verification email
+                try:
+                    msg = Message('Confirm Email', sender=app.config['MAIL_USERNAME'], recipients=[email])
+                    link = url_for('verify_email', token=new_verification_token, _external=True)
+                    msg.body = f'Click {link} to activate your account'
+                    mail.send(msg)
+                    flash('Verification email resent successfully.', 'success')
+                    # return jsonify({'message': 'Verification email resent successfully'})
+                except Exception as e:
+                    flash(f"Error sending email: {str(e)}", 'danger')
+                    # return jsonify({'error': f"Error sending email: {str(e)}"}), 500
+            else:
+                flash('User not found', 'danger')
+                # return jsonify({'error': 'User not found'}), 404
+        else:
+          flash('Email not provided in the request', 'danger')
+            # return jsonify({'error': 'Email not provided in the request'}), 400
+
 
 # --------------------------Authentication End-------------------------------#
 
@@ -244,6 +284,34 @@ def our_team():
 @app.route('/about-us')
 def about_us():
     return render_template("about-us.html")
+
+@app.route('/blogs')
+def blogs():
+    return render_template("./blogs/blogs.html")
+
+@app.route('/blogs/future')
+def blogs_future():
+    return render_template("./blogs/future.html")
+
+@app.route('/blogs/grants')
+def blogs_grants():
+    return render_template("./blogs/grants.html")
+
+@app.route('/blogs/maintenance')
+def blogs_maintenance():
+    return render_template("./blogs/maintenance.html")
+
+@app.route('/blogs/health')
+def blogs_health():
+    return render_template("./blogs/health.html")
+
+@app.route('/blogs/mechanized-tools')
+def blogs_mechanized_tools():
+    return render_template("./blogs/mechanized_tools.html")
+
+@app.route('/carbon-emission-calculator')
+def carbon_emission():
+    return render_template("carbonEmissionsCalc.html")
 #---------------------------End Other Pages-------------------------------------#
 
 if __name__ == "__main__":

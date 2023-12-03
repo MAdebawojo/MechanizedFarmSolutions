@@ -2,26 +2,104 @@
 <html>
 <head>
     <title>Carbon Emissions Calculator</title>
+    <link href="../static/homePage/nav.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
     <style>
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+       body {
+    font-family: 'Arial', sans-serif;
+}
 
-        .form-group {
-            margin-bottom: 10px;
-        }
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
 
-        .result {
-            font-weight: bold;
-            margin-top: 10px;
-        }
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.result {
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
     </style>
 </head>
 <body>
+       <!-- The is the main Nav bar -->
+       <nav class="navbar navbar-expand-lg navbar-light custom-nav">
+        <a class="navbar-brand custom-logo" href="{{ url_for('home') }}">MFS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav custom-nav-items mx-auto">
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('about_us') }}">About Us</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('our_team') }}">Our Team</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('blogs') }}">Blog</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{url_for('shop')}}">Machinery Rentals</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('carbon_emission') }}">Emissions</a>
+                </li>
+                <li class="nav-item custom-nav-items">
+                    <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
+                </li>
+            </ul>
+            <div class="custom-login-signup">
+                <a class="nav-link nav-item custom-nav-border" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-link nav-item custom-nav-border" href="{{ url_for('register') }}">Sign Up</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <h1>Carbon Emissions Calculator</h1>
         <div class="form-group">
@@ -72,8 +150,35 @@
             document.getElementById("emissions").textContent = "Emissions: " + emissions.toFixed(2) + " units";
         }
     </script>
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Select Example</title>
+</head>
+<body>
+    <label for="mySelect">Choose an Option:</label>
+    <select id="mySelect">
+        <option value="option1">Harrow</option>
+        <option value="option2">Sprayer</option>
+        <option value="option3">Combine Harvester</option>
+        <option value="option4">Rake</option>
+        <option value="option3">Roller</option>
+        <option value="option4">Cultivator</option>
+    </select>
+</body>
+</html> -->
+
 
 
 

@@ -3,6 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <link rel="stylesheet" href="../static/homePage/flash-message.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .verification-container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="flash-messages">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="verification-container">
+        <h2>Email Verification</h2>
+        <p>Verification code sent to your email address.<br>Please click the link.</p>
+    
+    <!-- <form id="verificationForm">
+        <input type="text" id="verificationCode" placeholder="Verification Code" required>
+        <button type="submit">Verify</button>
+    </form> -->
+    
+        <p>Didn't receive the code? <a href="{{url_for('resend_verification')}}" id="resendLink">Resend</a></p>
+    </div>
+
+<script>
+    // document.getElementById('verificationForm').addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     // Add logic to handle verification on the server side
+    //     alert('Verification logic goes here.');
+    // });
+
+    // document.getElementById('resendLink').addEventListener('click', function(event) {
+    //     event.preventDefault();
+    //     // Add logic to resend verification email on the server side
+    //     alert('Resend email logic goes here.');
+    // });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../static/homePage/js/flash-messages.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
    <link rel="stylesheet" href="../static/emailVerificationPage.css">
 </head>
@@ -13,4 +115,4 @@
         <p>Didn't get the email? <a href="#">Resend</a></p>
     </main>
 </body>
-</html>
+</html> -->

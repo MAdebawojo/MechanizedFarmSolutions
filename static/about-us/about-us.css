@@ -38,6 +38,7 @@ p {
     line-height: 1.6;
 }
 
+
 /* Responsive Styles */
 @media screen and (max-width: 600px) {
     header {
