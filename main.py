@@ -113,7 +113,7 @@ def register():
                 users.insert_one(new_user)
                 msg = Message('Confirm Email', sender=app.config['MAIL_USERNAME'], recipients=[email])
                 link = url_for('verify_email', token=verification_token, external=True)
-                msg.body = f'Click 127.0.0.1:5000{link} to activate your account'
+                msg.body = f'Click mechanized-farm-solutions-clm1.vercel.app{link} to activate your account'
                 mail.send(msg)
                 # flash('A verification link has been sent to your email. Please check your inbox.', 'success')
                 # return redirect(url_for('email_verification_page'))
