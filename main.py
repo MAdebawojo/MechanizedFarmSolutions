@@ -1,5 +1,7 @@
 import os
 import secrets
+import signal
+import sys
 from flask import Flask, request, render_template, flash, redirect, url_for
 from flask_bcrypt import Bcrypt
 from pymongo import MongoClient
@@ -314,7 +316,18 @@ def carbon_emission():
     return render_template("carbonEmissionsCalc.html")
 #---------------------------End Other Pages-------------------------------------#
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
+
+def handle_exit(signum, frame):
+    print("Received signal to exit. Shutting down gracefully.")
+    sys.exit(0)
+
+signal.signal(signal.SIGTERM, handle_exit)
+signal.signal(signal.SIGINT, handle_exit)
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
-
-
+    print("The server is listening...")
+    app.debug = False
