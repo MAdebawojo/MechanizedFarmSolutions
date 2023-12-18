@@ -329,5 +329,7 @@ signal.signal(signal.SIGINT, handle_exit)
 
 
 if __name__ == "__main__":
-    print("The server is listening...")
-    app.debug = False
+    try:
+        app.run(debug=False)
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
